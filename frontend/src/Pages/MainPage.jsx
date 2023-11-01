@@ -4,6 +4,7 @@ import LeftSideBar from "../Components/LeftSideBar"
 import "../styles/main-page.css"
 import { useLocation } from "react-router-dom"
 import axios from "axios"
+import { BASE_URL } from "../../api/endpoints"
 
 const MainPage = () =>{
 
@@ -38,7 +39,7 @@ const MainPage = () =>{
     const getApplicantDetail = async(applicantUsername) =>{
         try {
 
-            const response = await axios.get(`https://teamseeker-production-8e24.up.railway.app/api/detailapplicant/${applicantUsername}`)
+            const response = await axios.get(BASE_URL+`/detailapplicant/${applicantUsername}`)
 
             return response.data.dataDetailApplicant[0]
             
@@ -56,7 +57,7 @@ const MainPage = () =>{
             "usernameTeam": userNameData,
           };
       
-          const response = await axios.post('https://teamseeker-production-8e24.up.railway.app/api/matches', requestBody);
+          const response = await axios.post(BASE_URL+'/matches', requestBody);
       
           const matchListResponse = response.data.userNameApplicants;
 

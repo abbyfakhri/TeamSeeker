@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import team_seeker_logo from "../assets/team_seeker_logo.png";
 import add from "../assets/add.png";
+import { BASE_URL } from "../../api/endpoints";
 
 const SignupForm = () =>{
 
@@ -144,7 +145,7 @@ const SignupForm = () =>{
 
                 console.log(userData)
 
-                const response = await axios.post('https://teamseeker-production-8e24.up.railway.app/api/registerapplicant',userData)
+                const response = await axios.post(BASE_URL+'/registerapplicant',userData)
 
                 console.log('response data:',response.data)
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import DetailModal from "./DetailModal"
 import axios from "axios"
+import { BASE_URL } from "../../api/endpoints"
 
 const MatchList = ({matchList,userNameData,setMatchList,testMatchList}) =>{
 
@@ -37,7 +38,7 @@ const MatchList = ({matchList,userNameData,setMatchList,testMatchList}) =>{
         console.log('applicant username:',deleteData.usernameApplicant)
 
 
-        const response = await axios.delete('https://teamseeker-production-8e24.up.railway.app/api/delmatch',{ data: deleteData })
+        const response = await axios.delete('/delmatch',{ data: deleteData })
 
         if(response.data.message == "Match deleted successfully"){
 

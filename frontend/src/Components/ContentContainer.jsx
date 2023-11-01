@@ -5,6 +5,7 @@ import userData from "../../dummyData/userData"
 import axios from "axios"
 import yes_icon from '../assets/yes_icon.png'
 import no_icon from '../assets/no_icon.png'
+import { BASE_URL } from "../../api/endpoints"
 
 const ContentContainer = ({matchList,setMatchList,userNameData}) =>{
 
@@ -28,7 +29,7 @@ const ContentContainer = ({matchList,setMatchList,userNameData}) =>{
     const getListOfCandidates = async () =>{
         try {
 
-            const response = await axios.get(`https://teamseeker-production-8e24.up.railway.app/api/home/${userNameData}`)
+            const response = await axios.get(BASE_URL+`/home/${userNameData}`)
             console.log('skills applicant:',response.data.applicantBySkills)
             setListCandidate(response.data.applicantBySkills)
             setCardData(response.data.applicantBySkills[0])
@@ -51,7 +52,7 @@ const ContentContainer = ({matchList,setMatchList,userNameData}) =>{
 
             try {
 
-                const response = await axios.post('https://teamseeker-production-8e24.up.railway.app/api/matched',matchUserData)
+                const response = await axios.post(BASE_URL+'/matched',matchUserData)
 
                 if(response.data.message == 'Matching Successful!'){
 

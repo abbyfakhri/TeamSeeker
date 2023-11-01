@@ -3,6 +3,7 @@ import "../styles/login.css"
 import { useState } from "react"
 import axios from "axios"
 import team_seeker_logo from '../assets/team_seeker_logo.png';
+import { BASE_URL } from "../../api/endpoints";
 
 const Signup = () =>{
 
@@ -48,7 +49,7 @@ const Signup = () =>{
 
             try {
                 
-                const response = await axios.post('https://teamseeker-production-8e24.up.railway.app/api/createaccount',authenticationData)
+                const response = await axios.post(BASE_URL+'/createaccount',authenticationData)
                 console.log('response data:',response.data)
                 
                 navigate('/role',{

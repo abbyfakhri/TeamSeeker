@@ -3,6 +3,7 @@ import "../styles/main-page.css"
 import MatchList from "./MatchList"
 import { useEffect, useState } from "react"
 import TeamModal from "./TeamModal"
+import { BASE_URL } from "../../api/endpoints"
 
 const LeftSideBar = ({matchList,setMatchList,userNameData,getMatchList,renderCount}) =>{
 
@@ -14,7 +15,7 @@ const LeftSideBar = ({matchList,setMatchList,userNameData,getMatchList,renderCou
 
     const getUserDataFromAPI = async () =>{
 
-        const response = await axios(`https://teamseeker-production-8e24.up.railway.app/api/detailteam/${userNameData}`)
+        const response = await axios(BASE_URL+`/detailteam/${userNameData}`)
 
         setUserDetail(response.data.dataTeamDetail[0])
 

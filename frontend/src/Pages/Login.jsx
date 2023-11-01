@@ -3,6 +3,7 @@ import "../styles/login.css"
 import { useState } from "react"
 import axios from "axios"
 import team_seeker_logo from '../assets/team_seeker_logo.png';
+import { BASE_URL } from "../../api/endpoints";
 
 export default function Login(){
 
@@ -35,7 +36,7 @@ export default function Login(){
 
             try {
 
-                const response = await axios.post('https://teamseeker-production-8e24.up.railway.app/api/userlogin',loginData)
+                const response = await axios.post(BASE_URL+'/userlogin',loginData)
                 
                 if(response.data.message == "Login Successful!"){
 
