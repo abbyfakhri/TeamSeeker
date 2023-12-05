@@ -38,7 +38,7 @@ const MatchList = ({matchList,userNameData,setMatchList,testMatchList}) =>{
         console.log('applicant username:',deleteData.usernameApplicant)
 
 
-        const response = await axios.delete('/delmatch',{ data: deleteData })
+        const response = await axios.delete(BASE_URL+'/delmatch',{ data: deleteData })
 
         if(response.data.message == "Match deleted successfully"){
 
