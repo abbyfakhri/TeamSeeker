@@ -26,10 +26,9 @@ const {
      applicantBySkillReq
 } = require('../controllers/homeController')
 
-router.get('/', (_req, res) => {
+router.get('/', (req, res) => {
      res.send('Welcome to TeamSekeer API');
 });
-
 
 router.post('/registerteam', teamRegistration);
 router.post('/registerapplicant', applicantRegistration);
