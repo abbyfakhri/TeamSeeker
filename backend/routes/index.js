@@ -26,7 +26,7 @@ const {
      applicantBySkillReq
 } = require('../controllers/homeController')
 
-router.get('/', (req, res) => {
+router.get('/test', (req, res) => {
      res.send('Welcome to TeamSekeer API');
 });
 
