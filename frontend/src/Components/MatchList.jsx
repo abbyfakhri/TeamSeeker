@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import DetailModal from "./DetailModal"
 import axios from "axios"
-import { BASE_URL } from "../../api/endpoints"
+import { BASE_URL } from "../api/endpoints"
+
 
 const MatchList = ({matchList,userNameData,setMatchList,testMatchList}) =>{
 
@@ -26,7 +27,7 @@ const MatchList = ({matchList,userNameData,setMatchList,testMatchList}) =>{
 
     
 
-    const unmatchHandler = async() =>{
+    const unmatchHandler = async() => {
         
         const deleteData = 
         {
@@ -70,30 +71,22 @@ const MatchList = ({matchList,userNameData,setMatchList,testMatchList}) =>{
         setMatchList(filteredList);
       };
 
-      useEffect(() => {
-        removeDuplicates()
-      }, [])
-      
-
 
     return(
         <>
             <div className="match-list-container">
 
             {
-                
-
-                matchList.slice(0,Math.ceil(matchList.length/2)).map(match =>{
-
-
+                matchList.map(match =>{
                 return(
 
                     <div key = {match.id} className="match-list-holder">
 
-                    <img className="match-list-image-holder"
-                    onClick={() => clickProfilePict(match)} 
-                    src="https://100k-faces.glitch.me/random-image"/>
-                    <p style={{ color: 'white' }}>{match.userName}</p>
+                        <img className="match-list-image-holder"
+                        onClick={() => clickProfilePict(match)} 
+                        src="https://100k-faces.glitch.me/random-image"/>
+
+                        <p style={{ color: 'white' }}>{match.userName}</p>
 
                     </div>
                     

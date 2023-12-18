@@ -5,7 +5,7 @@ const Card = ({cardData}) =>{
 
     const [isOpen, setIsOpen] = useState(false)
 
-    if(cardData == undefined) return("there's no applicant yet")
+    if(cardData == undefined) return(<h2 className="applicant-name-holder" style={{color: 'white'}}>No Applicant</h2>)
 
 
     return(

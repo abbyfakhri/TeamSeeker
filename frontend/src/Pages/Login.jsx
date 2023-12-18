@@ -3,9 +3,14 @@ import "../styles/login.css"
 import { useState } from "react"
 import axios from "axios"
 import team_seeker_logo from '../assets/team_seeker_logo.png';
-import { BASE_URL } from "../../api/endpoints";
+import { useEffect } from "react";
+import { BASE_URL } from "../api/endpoints";
 
 export default function Login(){
+
+    useEffect(() => {
+        console.log(BASE_URL)
+    },[])
 
     const navigate = useNavigate()
 

@@ -4,7 +4,7 @@ import LeftSideBar from "../Components/LeftSideBar"
 import "../styles/main-page.css"
 import { useLocation } from "react-router-dom"
 import axios from "axios"
-import { BASE_URL } from "../../api/endpoints"
+import { BASE_URL } from "../api/endpoints"
 
 const MainPage = () =>{
 
@@ -32,7 +32,6 @@ const MainPage = () =>{
                 newData
             ]
         })
-
 
     }
 
@@ -79,19 +78,20 @@ const MainPage = () =>{
 
     return(
         <>
-        <div className="main-page-container">
-        <LeftSideBar
-            getMatchList = {getMatchList} 
-            matchList = {matchList}
-            setMatchList = {setMatchList}
-            userNameData = {userNameData}
-        />
-        <ContentContainer 
-        userNameData = {userNameData}
-        matchList = {matchList}
-        setMatchList = {setMatchList}    
-        />
-        </div>
+            <div className="main-page-container">
+                <LeftSideBar
+                    getMatchList = {getMatchList} 
+                    matchList = {matchList}
+                    setMatchList = {setMatchList}
+                    userNameData = {userNameData}
+                />
+                
+                <ContentContainer 
+                    userNameData = {userNameData}
+                    matchList = {matchList}
+                    setMatchList = {setMatchList}    
+                />
+            </div>
         </>
     )
 }

@@ -21,9 +21,12 @@ const MODAL_STYLES = {
 
 const DetailModal = ({ open, onClose, cardData,unmatchHandler,matchList }) =>{
 
-    
-
     if (!open) return null
+
+    const handleUnmatch = () => {
+        unmatchHandler();
+        window.location.reload(); // This will refresh the page
+    };
 
     return(
         <>
@@ -64,8 +67,9 @@ const DetailModal = ({ open, onClose, cardData,unmatchHandler,matchList }) =>{
                       
                       <p className="location-holder">{cardData.email}</p>
 
-                      <button onClick={unmatchHandler}
-                      className="unmatch-btn">unmatch</button>
+                      <button onClick={handleUnmatch} className="unmatch-btn">
+                            unmatch
+                        </button>
                 </div>
 
             </div>

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import team_seeker_logo from "../assets/team_seeker_logo.png";
 import add from "../assets/add.png";
-import { BASE_URL } from "../../api/endpoints";
+import { BASE_URL } from "../api/endpoints";
 
 const SignupFormTeam = () =>{
 

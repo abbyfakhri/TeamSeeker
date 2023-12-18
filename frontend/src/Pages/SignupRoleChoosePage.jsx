@@ -49,8 +49,6 @@ const SignupRoleChoosePage = () =>{
         else{
             alert('Please Pick One')
         }
-         
-
 
       }
 

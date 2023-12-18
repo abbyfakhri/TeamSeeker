@@ -11,8 +11,9 @@ app.use(cors());
 app.use(BASE_PATH, routes)
 
 function serverConn(){
-     app.listen(PORT,'0.0.0.0', () =>{
+     app.listen(PORT, () =>{
           console.log(`Server is running on port: ${PORT}`)
+          console.log(`Server running on http://localhost:${PORT}`)
      })
 }
 

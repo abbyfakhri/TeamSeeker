@@ -3,7 +3,8 @@ import "../styles/main-page.css"
 import MatchList from "./MatchList"
 import { useEffect, useState } from "react"
 import TeamModal from "./TeamModal"
-import { BASE_URL } from "../../api/endpoints"
+import { BASE_URL } from "../api/endpoints"
+
 
 const LeftSideBar = ({matchList,setMatchList,userNameData,getMatchList,renderCount}) =>{
 
@@ -18,8 +19,6 @@ const LeftSideBar = ({matchList,setMatchList,userNameData,getMatchList,renderCou
         const response = await axios(BASE_URL+`/detailteam/${userNameData}`)
 
         setUserDetail(response.data.dataTeamDetail[0])
-
-        console.log('new match list',matchList[0])
 
     }
 
@@ -55,9 +54,9 @@ const LeftSideBar = ({matchList,setMatchList,userNameData,getMatchList,renderCou
         <h2 style={{ color: 'white' }}>Matches</h2>
 
         <MatchList
-        setMatchList = {setMatchList}
-        userNameData = {userNameData} 
-        matchList = {matchList}/>
+            setMatchList = {setMatchList}
+            userNameData = {userNameData} 
+            matchList = {matchList}/>
         
         </div>
         </>
